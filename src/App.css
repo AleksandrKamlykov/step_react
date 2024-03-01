@@ -1,12 +1,127 @@
+
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  min-width:100vw;
+  min-height: 100vh;
   text-align: center;
 }
 
-.timer{
+.insta{
+  width:400px;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  gap:10px
+  gap:50px;
+  margin-top: 50px;
+}
+
+.post{
+background-color: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color:#000
+}
+.gallery{
+  position: relative;
+  width: 100%;
+  height: max-content;
+}
+
+.next-btn, .prev-btn{
+  display: block;
+  position: absolute;
+  top: 50%;
+  opacity: .3;
+  padding: 2px;
+
+}
+.next-btn{
+  right: 0;
+}
+.prev{
+  left: 0;
+
+}
+.post-photo{
+width: 100%;
+}
+.post-description-wrapper{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.post-description-title{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.post-options{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.like{
+  width: 30px;
+  cursor: pointer;
+}
+.like:hover{
+  transform: scale(1.05);
+}
+
+.comments-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+.btn-comment{
+  padding: 5px 8px;
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+header{
+  margin: 0 auto;
+  padding: 1px 20px;
+  width: 800px;
+  background-color: #f9f9f9;
+color:#222;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+
+.post-header{
+  width: 100%;
+  position: relative;
+  height: 28px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 12px;
+}
+
+.btn-more{
+  display: block;
+  position: relative;
+  background-color: transparent;
+  font-weight: bold;
+color: #1a1a1a;
+}
+.galery-counter{
+  position: absolute;
+  top:0;
+  left:0;
+  display: block;
+  padding: 4px 6px;
+  background-color: #CCC;
 }
