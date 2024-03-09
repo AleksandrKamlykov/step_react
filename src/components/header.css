@@ -1,0 +1,23 @@
+.app-header {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    gap: 10px
+}
+
+.accout {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}

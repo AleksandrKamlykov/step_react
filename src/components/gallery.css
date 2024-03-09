@@ -1,0 +1,7 @@
+.gallery-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+}
