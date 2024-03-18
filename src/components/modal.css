@@ -1,0 +1,29 @@
+.backdoor{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    background-color: rgba(0,0,0, 0.6);
+    position: fixed;
+
+}
+
+.close{
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+    background-color: transparent;
+}
+
+.modal-content{
+    min-width: 300px;
+    max-width: 90vw;
+    min-height: 200px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+}
