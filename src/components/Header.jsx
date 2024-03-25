@@ -1,9 +1,12 @@
 import "./header.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
     <header className={"app-header"}>
-      <a className="logo">Pixabay</a>
+      <Link to={"/"} className="logo">
+        Pixabay
+      </Link>
       <div className="menu">
         <button>Explore</button>
         <div className="accout"></div>

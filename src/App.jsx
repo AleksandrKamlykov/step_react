@@ -6,7 +6,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { Filter } from "./components/Filter.jsx";
 import { Gallery } from "./components/Gallery.jsx";
 import { Modal } from "./components/Modal.jsx";
-const API_KEY = "42763005-f134e9d84eb727dbee890a381";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./Router.jsx";
 
 const ModalContext = createContext({
   dataModal: null,
@@ -15,9 +16,6 @@ const ModalContext = createContext({
 });
 
 const App = () => {
-  const [searchValue, setSearchValue] = useState("");
-  const [gallery, setGallery] = useState([]);
-
   const [dataModal, setModalData] = useState(null);
 
   const hideModal = () => {
@@ -26,48 +24,11 @@ const App = () => {
   const showModal = (data) => {
     setModalData(data);
   };
-  const fetchPhotos = async (category) => {
-    const url = new URL("https://pixabay.com/api/");
-    url.searchParams.set("key", API_KEY);
-
-    if (category) {
-      url.searchParams.set("q", category);
-      // url.searchParams.set("category", category);
-    }
-
-    const photos = await fetch(url.href)
-      .then((res) => res?.json())
-      .then((res) => res?.hits ?? []);
-    console.log(photos);
-    setGallery(photos);
-  };
-
-  useEffect(() => {
-    fetchPhotos();
-  }, []);
-
-  const searchHandler = async () => {
-    await fetchPhotos(searchValue);
-  };
 
   return (
     <ModalContext.Provider value={{ hideModal, dataModal, showModal }}>
       <Header />
-      <Banner>
-        <h2>Stunning royalty-free images & royalty-free stock</h2>
-        <p>
-          Over 4.4 million+ high quality stock images, videos and music shared
-          by our talented community.
-        </p>
-        <SearchInput
-          value={searchValue}
-          handler={setSearchValue}
-          onSearch={searchHandler}
-        />
-      </Banner>
-      <Filter handler={setSearchValue} />
-      <Gallery gallery={gallery} />
-      <Modal />
+      <Router />
     </ModalContext.Provider>
   );
 };
